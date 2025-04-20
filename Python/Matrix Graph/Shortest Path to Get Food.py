@@ -29,3 +29,12 @@ class Solution:
                     visited.add((nr, nc))
         
         return -1
+    
+"""
+Normal BFS on graph.
+Start from the cell where the person is located.
+Neighbours will be adjacent cells, excluding diagonal cells.
+
+Since, BFS Explores level by level, the moment you go to the required cell would be the shortest one.
+Return the dist.
+"""
