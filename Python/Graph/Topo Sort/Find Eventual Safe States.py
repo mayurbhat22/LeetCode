@@ -30,3 +30,33 @@ class Solution:
         return sorted(answer)
 
 #DFS Approach
+class Solution:
+    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
+        n = len(graph)
+        adj_list = defaultdict(list)
+        for i in range(n):
+            edges = graph[i]
+            for e in edges:
+                adj_list[i].append(e)
+
+        visited = {}
+        
+        def dfs(node):
+            if node in visited:
+                return visited[node]
+            else:
+                visited[node] = False
+            
+            for nei in adj_list[node]:
+                if not dfs(nei):
+                    return False
+            
+            visited[node] = True
+            return True
+
+        res = []
+        for i in range(n):
+            if dfs(i):
+                res.append(i)
+        
+        return res
