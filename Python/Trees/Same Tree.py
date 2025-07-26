@@ -15,3 +15,12 @@ class Solution:
         right_tree = self.isSameTree(p.right, q.right)
 
         return left_tree and right_tree
+
+#Java
+# class Solution {
+#     public boolean isSameTree(TreeNode p, TreeNode q) {
+#         if(p == null && q == null) return true;
+#         if(p == null || q == null || p.val != q.val) return false;
+#         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+#     }
+# }
