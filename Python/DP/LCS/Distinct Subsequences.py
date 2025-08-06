@@ -1,3 +1,4 @@
+#Link: https://leetcode.com/problems/distinct-subsequences
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         m, n = len(s), len(t)
