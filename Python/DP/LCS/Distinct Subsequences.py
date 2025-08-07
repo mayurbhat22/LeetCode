@@ -1,4 +1,5 @@
 #Link: https://leetcode.com/problems/distinct-subsequences
+#Memoization
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         m, n = len(s), len(t)
@@ -18,7 +19,8 @@ class Solution:
             return dp[i][j]
 
         return solve(m-1, n-1)
-        
+
+#Tabulation        
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         m, n = len(s), len(t)
@@ -34,6 +36,7 @@ class Solution:
                     dp[i][j] = dp[i-1][j]
         return dp[m][n]
 
+#Space Optimization
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         m, n = len(s), len(t)
